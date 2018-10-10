@@ -1,0 +1,6 @@
+@charset "utf-8";
+/* CSS Document */
+ul{ display:block; margin-top:20px;}
+li{ font-size:20px; font-family:"宋体"; color:#666; display:inline-block; float:left; min-width:400px; text-align:left;}
+li :hover{ cursor:pointer; color:#0b579f;}
+li a{ text-decoration:none; color:#666;}

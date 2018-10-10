@@ -1,0 +1,6 @@
+@charset "utf-8";
+/* CSS Document */
+form{ margin-top:20px; text-align:left;}
+label{ font-size:20px; font-family:"宋体"; color:#666; width:100px; height:40px; line-height:40px; text-align:left; display:inline-block; margin-right:20px;}
+input{ width:250px; height:30px; border:1px solid #CCC; text-align:center;}
+textarea{ width:800px; height:200px; border:1px solid #CCC; text-align:left;  font-family:"宋体"; font-size:18px; color:#000; line-height:30px;}

@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+
+#pic{ width: 100%; height: 420px; position: relative; overflow:hidden;}
+#picture{ position: absolute; top: 0; left: 0; width: 100%; height: 3500px;}
+#picture li{ width: 100%; height: 420px;}
+#picture img{ width: 100%; height: 420px;}
+
+#squares{ width:100px; height:15px; position: absolute; bottom:15px; left:47%;}
+#squares li{ width:15px; height:15px; background-color:#FFF; display:inline-block;}
+#squares li:hover{ background-color:#090;}
+
+/*******************日历控件******************/
+.calendar { POSITION: absolute; WIDTH:190px; HEIGHT: 180px; PADDING:0;DISPLAY: none; FLOAT: left;border:1px solid #819dba;background:#fff;}
+.calendar .calMain { WIDTH:100%; HEIGHT:180px; FLOAT: left; OVERFLOW: hidden; POSITION: absolute; }
+.calendar .calMain .calTitle { WIDTH: 100%; FLOAT: left; HEIGHT: 23px; BACKGROUND: #fff; OVERFLOW: hidden; }
+.calendar .calMain .calTitle .t_date { WIDTH: 149px; FLOAT: left; HEIGHT: 23px; COLOR: #51729D; FONT-WEIGHT: bold; LINE-HEIGHT: 23px; TEXT-ALIGN: center; }
+.calendar .calMain .calTitle .prevMonth { WIDTH: 15px; HEIGHT: 15px; FLOAT: left; MARGIN: 8px 0 0 5px; CURSOR: pointer; BACKGROUND: url(../imgs/zhibu_date.png) no-repeat 5px -87px; }
+.calendar .calMain .calTitle .nextMonth { WIDTH: 15px; HEIGHT: 15px; FLOAT: right; MARGIN: 8px 5px 0 0; CURSOR: pointer; BACKGROUND: url(../imgs/zhibu_date.png) no-repeat 6px -157px; }
+.calendar .calMain .calTitle .currentYear { }
+.calendar .calMain .calTitle .currentMonth { }
+.calendar .calMain .calTitle .currentYearText { FLOAT: left; MARGIN: 0 0px 0 39px; CURSOR: pointer; }
+.calendar .calMain .calTitle .currentMonthText { FLOAT: left; CURSOR: pointer; WIDTH: 30px; TEXT-ALIGN: right; }
+.calendar .calMain .calContent { WIDTH: 378px; HEIGHT: 157px; FLOAT: left; }
+.calendar .calMain .calContent .enabled { POSITION: absolute; WIDTH: 100%; HEIGHT: 157px; FLOAT: left; }
+.calendar .calMain .calContent .reserve { POSITION: absolute; WIDTH:100%; HEIGHT: 157px; FLOAT: left; }
+.calendar .calMain .calContent .tabD { WIDTH: 100%; FLOAT: left; BORDER-COLLAPSE: collapse; BORDER-SPACING: 0; BORDER: 0; }
+.calendar .calMain .calContent .tabD th { BACKGROUND: url(../imgs/zhibu_date.png) repeat-x; LINE-HEIGHT: 22px; FONT-WEIGHT: normal; PADDING-BOTTOM: 4px; COLOR: #fff; }
+.calendar .calMain .calContent .tabD td { COLOR: #1F3959; TEXT-ALIGN: center; LINE-HEIGHT: 19px; WIDTH: 27px; FONT-FAMILY: "Georgia"; }
+.calendar .calMain .calContent .tabD td span { COLOR: #C0C0C0; }
+.calendar .calMain .calContent .tabD td a { WIDTH: 23px; LINE-HEIGHT: 18px; FLOAT: left; MARGIN: 1px 0 0 2px; CURSOR: pointer; COLOR: #51729D; }
+.calendar .calMain .calContent .tabD td .nextD { COLOR: #BCCADC; }
+.calendar .calMain .calContent .tabD td .prevD { COLOR: #BCCADC; }
+.calendar .calMain .calContent .tabD td .hover { WIDTH: 21px; LINE-HEIGHT: 16px; BORDER: 1px solid #7D99BD; FLOAT: left; MARGIN: 1px 0 0 2px; }
+.calendar .calMain .calContent .tabD td .current { WIDTH: 21px; LINE-HEIGHT: 16px; BORDER: 1px solid #51729D; FLOAT: left; MARGIN: 1px 0 0 2px; }
+.calendar .calMain .calContent .tabD td .select { WIDTH: 21px; LINE-HEIGHT: 16px; BACKGROUND: #51729D; BORDER: 1px solid #51729D; COLOR: #fff; FLOAT: left; MARGIN: 1px 0 0 2px; }
+.calendar .calMain .calContent .tabM { WIDTH: 100%; FLOAT: left; BORDER-COLLAPSE: collapse; BORDER-SPACING: 0; BORDER: 0; }
+.calendar .calMain .calContent .tabM td { COLOR: #1F3959; TEXT-ALIGN: center; HEIGHT: 50px; WIDTH: 47px; FONT-FAMILY: "Georgia"; }
+.calendar .calMain .calContent .tabM td a { WIDTH: 42px; LINE-HEIGHT: 42px; FLOAT: left; MARGIN: 0px 0 0 2px; CURSOR: pointer; COLOR: #51729D; }
+.calendar .calMain .calContent .tabM td .hover { WIDTH: 40px; LINE-HEIGHT: 40px; BORDER: 1px solid #7D99BD; FLOAT: left; MARGIN: 0px 0 0 2px; }
+.calendar .calMain .calContent .tabM td .current { WIDTH: 40px; LINE-HEIGHT: 40px; BORDER: 1px solid #51729D; FLOAT: left; MARGIN: 0px 0 0 2px; }
+.calendar .calMain .calContent .tabM td .select { WIDTH: 40px; LINE-HEIGHT: 40px; BACKGROUND: #51729D; BORDER: 1px solid #51729D; COLOR: #fff; FLOAT: left; MARGIN: 0px 0 0 2px; }
+.calendar .calMain .calContent .tabY { WIDTH: 100%; FLOAT: left; BORDER-COLLAPSE: collapse; BORDER-SPACING: 0; BORDER: 0; }
+.calendar .calMain .calContent .tabY td { COLOR: #1F3959; TEXT-ALIGN: center; HEIGHT: 50px; WIDTH: 47px; FONT-FAMILY: "Georgia"; }
+.calendar .calMain .calContent .tabY td a { WIDTH: 42px; LINE-HEIGHT: 42px; FLOAT: left; MARGIN: 0px 0 0 2px; CURSOR: pointer; COLOR: #51729D; }
+.calendar .calMain .calContent .tabY td .nextY { COLOR: #BCCADC; }
+.calendar .calMain .calContent .tabY td .prevY { COLOR: #BCCADC; }
+.calendar .calMain .calContent .tabY td .hover { WIDTH: 40px; LINE-HEIGHT: 40px; BORDER: 1px solid #7D99BD; FLOAT: left; MARGIN: 0px 0 0 2px; }
+.calendar .calMain .calContent .tabY td .current { WIDTH: 40px; LINE-HEIGHT: 40px; BORDER: 1px solid #51729D; FLOAT: left; MARGIN: 0px 0 0 2px; }
+.calendar .calMain .calContent .tabY td .select { WIDTH: 40px; LINE-HEIGHT: 40px; BACKGROUND: #51729D; BORDER: 1px solid #51729D; COLOR: #fff; FLOAT: left; MARGIN: 0px 0 0 2px; }
+.calendar .calMain a:hover { TEXT-DECORATION: none; }
+
+
+#title1{ width:100%; height:80px; margin-top:30px;}
+#title1 span{ line-height:80px; font-family:"华文行楷"; font-size:50px; color:#0b579f; font-weight:lighter;}
+
+#house1{ width:86%;  margin-left:7%;}
+#house1 ul{ width:100%; margin-bottom:60px; text-align:left;}
+#house1 li{box-shadow:0px 0px 5px #CCCCCC inset; display:inline-block; width:23%; height:360px; margin-right:1%;  padding:0; border:1px #D8D8D8 solid; border-radius:5px; overflow:hidden; }
+#house1 li:hover{box-shadow:0px 0px 5px #0b579f inset; cursor:pointer;}
+#house1 img{ margin:0; border:none;}
+.houseimg1{ width:100%; height:250px; text-align:center; position:relative;}
+.houseword{ width:100%; height:100px;}
+.houseword .span1{ margin-top:20px; color:#666; font-family:"宋体"; font-weight:bold; font-size:14px; padding-left:10px; padding-right:10px; text-align:left; display:block; line-height:20px; }
+.houseword .span1 a{ color:#666;}
+.houseword .span2{ display:inline-block; font-size:18px; margin-top:10px; font-weight:bold; margin-left:10px; float:left; color:#666; }
+.houseword .span3{ display:inline-block; font-size:18px; margin-top:10px; font-weight:bold; margin-right:10px; float:right; color:#F00; }
+
+#title2{ width:100%; height:80px; margin-top:30px;}
+#title2 span{ line-height:80px; font-family:"华文行楷"; font-size:50px; color:#0b579f; font-weight:lighter;}
+
+#house2{ width:86%; margin-left:7%;}
+#house2 ul{ width:100%;  margin-bottom:20px; text-align:left;}
+#house2 li{display:inline-block; width:23%; height:320px; margin-right:1%;  padding:0; border:1px #D8D8D8 solid; border-radius:5px; overflow:hidden; }
+#house2 li:hover{cursor:pointer;}
+#house2 img{ margin:0; border:none;}
+.houseimg2{ width:100%; height:230px; text-align:center; position:relative;}
+.zhezhao{ position:absolute; width:100%; height:100%; text-align:center; color:#666; background-color:#FFF; top:-100%; left:0; opacity:0.9; z-index:10; transition:0.5s; }
+.houseimg2:hover .zhezhao{ top:0;}
+.zhezhao p{ display:block; margin:80px 20px 20px 20px; font-size:16px; font-weight:500; line-height:25px;}
+.zhezhao a{ color:#FFF;}
+.btn{display: inline-block; padding: 5px 10px; font-size: 14px; color: #FFF; border: 2px solid #4d92d9; background-color: #4d92d9; text-decoration: none; transition: 0.4s;}
+.btn:hover{background-color: transparent; color: #4d92d9; transition: 0.4s;}
+
+
+#story{ width:100%; height:570px; background-color:#AEF0CC; position:relative; padding-top:30px;}
+.story_left{ margin-left:8%; width:45%; margin-right:7%; margin-top:20px; height:420px; float:left;}
+.story_right{ width:30%; margin-right:10%; height:420px; margin-top:20px; float:right;}
+.story_left li{ width:100%; height:180px; margin-bottom:20px;}
+.story_left_pic{ width:160px; height:160px; border-radius:80px; float:left; margin:20px 20px 20px 0; overflow:hidden; transition:0.4s;}
+.story_left_pic:hover{ transform:scale(1.2,1.2); cursor:pointer;}
+.story_left_word{ height:180px; width:425px; float:right; overflow:hidden; }
+.story_left_word .span1{ font-size:24px; font-family:"微软雅黑"; color:#666;}
+.story_left_word .span2{ font-size:14px; font-family:"微软雅黑"; color:#666;}
+.story_left_word p{ font-size:14px; font-family:"宋体"; color:#666; text-align:left; line-height:25px; text-overflow:ellipsis; -o-text-overflow:ellipsis; text-indent:2em;}
+.story_right div{ width:100%-40px; height:110px; margin-bottom:10px; background-color:#FFF; padding:10px 20px 10px 20px; text-align:left; cursor:pointer;}
+.story_right p{ display:block; width:10px; text-align:center; line-height:25px; font-family:"微软雅黑"; font-size:14px; color:#666; float:left; margin-right:10px; font-weight:bold;}
+.story_right img{ float:right;}
+
+
+#about{ width:100%; height:250px;}
+#about ul{ width:80%; height:250px; margin-left:10%; text-align:left;}
+#about ul li{ display:inline-block; height:230px; width:150px; margin-right:10px; padding-top:20px;} 
+#about ul li span{ font-family:"微软雅黑"; font-size:16px; color:#666; font-weight:bold; line-height:40px;}
+#about ul li{ font-family:"宋体"; font-size:14px; color:#666; line-height:30px;}
+
+
+

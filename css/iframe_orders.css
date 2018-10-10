@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+.tabs { width: 800px; list-style: none; position: relative; text-align: left; font-family:"宋体"; color:#0b579f;}
+.tabs li { float: left; display: block;}
+.tabs input[type="radio"] { position: absolute; top: -9999px; left: -9999px;}
+.tabs label { display: block; padding: 14px 21px; border:1px solid #CCC; font-size: 20px; cursor: pointer; position: relative; top: 4px;}
+.tabs .tab-content { display: none; overflow: hidden; width: 100%; min-height:200px; position: absolute; top: 80px; left:0;/*40px对齐*/}
+.tabs [id^="tab"]:checked + label { top: 0; padding-top: 17px;}
+.tabs [id^="tab"]:checked ~ [id^="tab-content"] { display: block;}
+
+table{ width:750px; border:1px solid #CCC; font-family:"宋体"; font-size:18px; color:#666; font-weight:lighter; line-height:40px; text-align:center;}
+th,td{ border:1px solid #CCC; width:120px;}
+tr{ height:40px;}
+a{ text-decoration:none; cursor:pointer; color:#0b579f;}

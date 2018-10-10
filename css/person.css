@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+#pic{ width:100%; height:350px; }
+#pic .icon{ width:160px; height:160px; border-radius:80px; position:absolute; top:20%; left:44%; overflow:hidden; background-image:url(../imgs/person_icon.jpg);}
+#pic .name{ width:100px; height:40px; position:absolute; top:50%; left:46%; line-height:40px; text-align:center;}
+#pic .name span{ font-family:"宋体"; color:#600; font-weight:bold; font-size:18px;}
+
+
+#list{ margin-left:7%; margin-right:2%; width:15%; height:600px; float:left;}
+#list ul{ width:100%; margin-top:20px; border-right:8px #0b579f solid; }
+#list ul li{width:100%; display:block; height:50px; line-height:50px; font-family:"宋体"; color:#666; font-size:20px;}
+#list ul li:hover{ color:#0b579f; cursor:pointer;}
+
+
+#content{ width:65%; margin-right:8%; min-height:800px; float:right; }
+#content iframe{ margin-top:20px; width:100%; min-height:700px;  border:none;}

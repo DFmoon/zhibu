@@ -1,0 +1,7 @@
+@charset "utf-8";
+/* CSS Document */
+body{ text-align:left;}
+form{ margin-top:20px; margin-left:200px;}
+form label{ font-family:"宋体"; font-size:20px; color:#666; line-height:60px; display:inline-block; margin-right:50px; width:80px;}
+form input{ width:250px; height:30px; border:1px solid #CCC;}
+form input[readonly]{ color:#666;}

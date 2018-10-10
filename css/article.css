@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+#pic{ height:350px;}
+#word{ width:70%; min-height:800px; margin-left:15%; border:1px #CCCCCC solid; background-color:#DDF9EA;}
+
+
+#word .span1{ font-size:30px; font-family:"微软雅黑"; display:block; line-height:30px; color:#000; margin-top:20px;}
+#word .span2{ font-size:14px; font-family:"微软雅黑"; display:block; line-height:30px; color:#000;}
+#word article{ text-align:left; padding:20px 40px 20px 40px; font-size:18px; line-height:30px; font-family:"宋体"; color:#333; text-indent:2em;}
+
+
+#commu{width:70%; min-height:450px; margin-left:15%; margin-top:20px; border:1px #BDF2D6 solid; margin-bottom:20px; }
+.commu{ width:0 auto; min-height:140px; margin:20px 20px 20px 20px; border-bottom:1px #BDF2D6 dashed;}
+.commu_top{ width:100%; height:50px; line-height:50px;}
+.commu_top_pic{ width:50px; height:50px; border-radius:25px; float:left; background-color:#F96; overflow:hidden;}
+.commu_top_name{ width:840px; height:50px; float:right; color:#666; font-family:"宋体"; font-size:16px; }
+.commu_top_name .span3{ display:inline-block; float:left;}
+.commu_top_name .span4{ display:inline-block; float:right;}
+.commu_middle{ width:440px; float:right; min-height:60px; font-size:14px; color:#000; line-height:25px; text-align:left; padding-right:400px;}
+.commu_bottom{ width:100%; height:30px; line-height:30px; text-align:right; font-family:"宋体"; font-size:14px; color:#666; clear:both;}
+.commu_bottom .span5{ display:inline-block; float:right; margin-left:10px; width:40px; line-height:30px; color:#666; font-family:"宋体"; font-size:16px; }
+
+
+
+
+
+
+
+
