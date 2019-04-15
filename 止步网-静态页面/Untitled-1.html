@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet" type="text/css" href="css/zhibu.css"/>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/jscript" src="js/jquery-1.5.1.js"></script>
+<script type="text/jscript" src="js/zhibu.js"></script>
+<style>
+body {
+font-size: 12px;
+font-family: "微软雅黑", "宋体", "Arial Narrow";
+}
+</style>
+</head>
+
+<body>
+
+<div style="width:800px; height:80px; background-color:#000;">
+	
+    <select name="province" id="s1" style="width:170px; height:40px; margin-top:20px; color:#666; border:1px solid #ccc; text-align:center;"><option></option></select>   
+    <select name="city" id="s2" style="width:170px; height:40px; margin-top:20px; color:#666; border:1px solid #ccc; text-align:center;">   <option></option></select>   
+    <script language="javascript">   
+        setup(); 
+    </script> 
+    <script>
+    $(function () {
+        $("#txtBeginDate").calendar({
+            controlId: "divDate",                                 // 弹出的日期控件ID，默认: $(this).attr("id") + "Calendar"
+            speed: 200,                                           // 三种预定速度之一的字符串("slow", "normal", or "fast")或表示动画时长的毫秒数值(如：1000),默认：200
+            complement: true,                                     // 是否显示日期或年空白处的前后月的补充,默认：true
+            readonly: true,                                       // 目标对象是否设为只读，默认：true
+            upperLimit: NaN,                               // 日期上限，默认：NaN(不限制)
+            lowerLimit: new Date(),                   // 日期下限，默认：NaN(不限制)
+            callback: function () {                               // 点击选择日期后的回调函数
+            }
+        });
+        $("#txtEndDate").calendar();
+    });
+</script>
+    <input id="txtBeginDate" style="width:170px; height:36px; border:1px solid #ccc; text-align:center;" placeholder="入住时间"/>
+    <input id="txtEndDate" style="width:170px; height:36px; border:1px solid #ccc; text-align:center;" placeholder="退房时间" />
+    
+    <input id="search_house" type="button" value="搜索房源" style="width:100px; height:40px; border:1px solid #0b579f; text-align:center; background-color:#0b579f; color:#FFF; font-weight:bold; font-family:'宋体'; font-size:20px; margin-top:21px;" />
+</div>
+
+
+<table width="200" border="1" cellspacing="10">
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+ 
+
+</body>
+</html>

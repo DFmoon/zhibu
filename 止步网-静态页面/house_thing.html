@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>房源信息</title>
+<link rel="shortcut icon" href="imgs/shorticon.png" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet" type="text/css" href="css/house.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/jscript" src="js/jquery-1.5.1.js"></script>
+<script type="text/jscript" src="js/zhibu.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<script>
+	$(document).ready(function(e) {			
+		t = $('#list .div_1').offset().top;
+		fh = $('#list .div_1').height();
+		$(window).scroll(function(e){
+			s = $(document).scrollTop();	
+			if(s > t - 60){
+				$('#list .div_1').css('position','fixed');			
+			}else{
+				$('#list .div_1').css('position','');
+			}
+		})
+	});
+</script>
+</head>
+<body>
+
+<a href="#back" style="position:fixed; right:20px; bottom:20px; z-index:1000;"><img src="imgs/back.png" width="50" height="70" /></a>
+<div id="back"></div>
+
+
+<div id="top">
+	<img src="imgs/logo.png" width="183" height="55" />
+	<span>登录&nbsp;|&nbsp;注册&nbsp;|&nbsp;成为房东&nbsp;|&nbsp;联系我们</span>
+</div>
+<br /><br />
+
+
+<div id="pic">
+	<img src="imgs/house_thing_1.png" width="100%" height="350" />
+</div>
+
+
+<div id="list">
+	<div class="div_1">
+    	<div class="top">需一室内摆件</div>
+        <div>
+			<script>
+				$(function () {
+					$("#txtBeginDate").calendar({
+						controlId: "divDate",                                 // 弹出的日期控件ID，默认: $(this).attr("id") + "Calendar"
+						speed: 200,                                           // 三种预定速度之一的字符串("slow", "normal", or "fast")或表示动画时长的毫秒数值(如：1000),默认：200
+						complement: true,                                     // 是否显示日期或年空白处的前后月的补充,默认：true
+						readonly: true,                                       // 目标对象是否设为只读，默认：true
+						upperLimit: NaN,                               // 日期上限，默认：NaN(不限制)
+						lowerLimit: new Date(),                   // 日期下限，默认：NaN(不限制)
+						callback: function () {                               // 点击选择日期后的回调函数
+						}
+					});
+					$("#txtEndDate").calendar();
+				});
+    		</script>
+            <input id="txtBeginDate" style=" margin-bottom:20px;width:190px; height:36px; border:1px solid #ccc; text-align:center;" placeholder="入住时间"/>
+    		<input id="txtEndDate" style="width:190px; height:36px; border:1px solid #ccc; text-align:center;" placeholder="退房时间" />
+		</div>
+        <div style="margin-top:20px;">
+        	<a href="#" class="btn">立即交换</a>&nbsp;&nbsp;
+    		<a href="#" class="btn">加入收藏</a>
+        </div>
+    </div>
+</div>
+
+
+<div id="content">
+	<div class="house_name">
+    	<span>「小森林-夏秋」极简北欧花房</span>
+    </div>
+    
+	<div class="title">
+    	<span>房主</span>
+    </div>
+    <div class="house_holder">
+    	<div class="pic">
+    		<img src="imgs/zhibu_story_left_pic2.jpg" width="100%" height="100%" />
+        </div>
+        <div class="word">
+        	<p>余温&nbsp;&nbsp;♂</p>
+            <p>联系电话：15777110896</p>
+            <p>邮箱地址：1375709981@qq.com</p>
+        </div>
+    </div>
+    
+    <div class="title">
+    	<span>房屋介绍</span>
+    </div>
+    <div class="house_info">
+    	<p>
+        	1､宜笑的家是观音桥核心位置的最高品质公寓,24小时保安､闹中取静｡</p>
+			<p>2､舒适套房,白天,在客厅可以靠着沙发看一本自己喜欢的书或品一壶好茶,让自己放空;夜晚,窝在卧室的飘窗上感受山城夜晚的灯火辉煌与宁静｡</p>
+			<p>3､客厅书柜有各类型图书与影碟,供旅途中的朋友取阅｡</p>
+			<p>4､在一天的旅途后回到家,可与三两知己或一家人在柔软的沙发看个电影,在客厅斗个地主,玩玩儿桌游,或换换重庆的麻辣口味,自己在厨房给老人小孩做个熟悉的家乡菜｡在旅途中弄脏的衣服,我们也配备了洗衣机可以免费使用哦~</p>
+			<p>5､屋内的家电家具均采用高规格标准,科勒卫浴､林内厨卫､美的空调､三星电视､松下洗衣机,24小时热水,租客朋友们可以放心使用｡</p>
+			<p>6､床单被套一客一换,采用高品质“羽绒枕､羽绒被",无印风格“全棉"床上用品｡</p>
+			<p>7､房内备有驱蚊器､雨伞供卿使用,不用担心夏天有蚊子咬嗡嗡嗡,下雨天也不用担心没带伞啦~</p>
+			<p>8､一盆多肉､一束薰衣草､一株绿萝,房间的装潢都是宜笑精心挑选,家里的照片也是自己在旅途中的所见｡</p>
+			<p>在这儿,你将拥有一个在重庆的家,一个有生活气息的家｡在重庆旅行期间,如果你需要,宜笑和松会给你旅行指南。
+        </p>
+    </div>
+    
+    <div class="title">
+    	<span>具体位置</span>
+    </div>
+    <div class="house_address">
+    	<p>地址：观音桥8套房源 南滨路6套江景房 </p>
+        <div style="width:697px;height:400px;border:#ccc solid 1px;" id="dituContent"></div>
+		<script type="text/javascript">   
+			var markerArr = [{title:"「小森林-夏秋」极简北欧花房",content:"",point:"106.781241|29.885513",isOpen:1,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}];         
+            initMap();//创建和初始化地图
+        </script>
+    </div>
+    
+    <div class="title">
+    	<span>评价</span>
+    </div>
+    <div class="communication">
+        <div class="commu">
+            <div class="commu_top">
+                <div class="commu_top_pic">
+                    <img src="imgs/article_commu1.jpg" width="100%" height="100%" />
+                </div>
+                <div class="commu_top_name">
+                    <span class="span3">天空下的蒲公英</span>
+                    <span class="span4">2016/11/24 21:06</span>
+                </div>
+            </div>
+            <div class="commu_middle">
+                <p>
+                    “瘦西湖”之名最早见于文献记载为清初吴绮《扬州鼓吹词序》：“城北一水通平山堂，名瘦西湖，本名保障湖。
+                </p>
+            </div>
+            <div class="commu_bottom">
+                <img src="imgs/article_zan.gif" width="24" height="24" />&nbsp;
+                <img src="imgs/article_cai.gif" width="24" height="24" />
+            </div>
+        </div>
+        <div class="commu">
+            <div class="commu_top">
+                <div class="commu_top_pic">
+                    <img src="imgs/article_commu1.jpg" width="100%" height="100%" />
+                </div>
+                <div class="commu_top_name">
+                    <span class="span3">天空下的蒲公英</span>
+                    <span class="span4">2016/11/24 21:06</span>
+                </div>
+            </div>
+            <div class="commu_middle">
+                <p>
+                    “瘦西湖”之名最早见于文献记载为清初吴绮《扬州鼓吹词序》：“城北一水通平山堂，名瘦西湖，本名保障湖。
+                </p>
+            </div>
+            <div class="commu_bottom">
+                <img src="imgs/article_zan.gif" width="24" height="24" />&nbsp;
+                <img src="imgs/article_cai.gif" width="24" height="24" />
+            </div>
+        </div>
+        <div class="commu">
+            <div class="commu_top">
+                <div class="commu_top_pic">
+                    <img src="imgs/article_commu1.jpg" width="100%" height="100%" />
+                </div>
+                <div class="commu_top_name">
+                    <span class="span3">天空下的蒲公英</span>
+                    <span class="span4">2016/11/24 21:06</span>
+                </div>
+            </div>
+            <div class="commu_middle">
+                <p>
+                    “瘦西湖”之名最早见于文献记载为清初吴绮《扬州鼓吹词序》：“城北一水通平山堂，名瘦西湖，本名保障湖。
+                </p>
+            </div>
+            <div class="commu_bottom">
+                <img src="imgs/article_zan.gif" width="24" height="24" />&nbsp;
+                <img src="imgs/article_cai.gif" width="24" height="24" />
+            </div>
+        </div>
+    </div>
+    <a href="#" class="btn">上一页</a>
+    <a href="#" class="btn">下一页</a><br /><br /><br /><br />
+       
+</div>
+
+<div  style="clear:both;"></div>
+<div id="bottom">
+	<br /><br />
+	友情链接：<a href="http://www.cnsfk.com/" target="_blank">沙发客网</a>&nbsp;|&nbsp;<a href="http://ljianren.com/" target="_blank">脚步网</a>&nbsp;|&nbsp;<a href="http://www.sfkkkkkkkkk.com/" target="_blank">9K沙发客</a>&nbsp;|&nbsp;<a href="https://www.couchsurfing.com/" target="_blank">couchsurfing</a>&nbsp;|&nbsp;<a href="https://zh.airbnb.com/?af=15514385&c=baidu_generic_src_demand_Couch_p1&src=Baidu&medium=PPC&ag_kwid=2299-1-d76949114ea8bcf2.f4e18b323971e388" target="_blank">Airbnb</a>&nbsp;|&nbsp;<a href="http://www.tuniu.com/?p=14183&cmpid=mkt_03029701&utm_campaign=daohang&utm_source=2345.com&utm_medium=display" target="_blank">途牛旅游</a>&nbsp;|&nbsp;<a href="http://www.lvye.cn/" target="_blank">绿野户外</a>&nbsp;|&nbsp;<a href="http://www.qyer.com/" target="_blank">穷游网</a>&nbsp;|&nbsp;<a href="http://www.12306.cn/mormhweb/" target="_blank">12306</a>
+    <br /><br />
+    版权归属：&copy;广西大学计算机与电子信息学院电子商务系2013级（1）班&nbsp;沈东风
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>【止步网】在旅途中安家</title>
+<link rel="shortcut icon" href="imgs/shorticon.png" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet" type="text/css" href="css/zhibu.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-1.5.1.js"></script>
+<script type="text/javascript" src="js/zhibu.js"></script>
+
+</head>
+<script>
+	window.onload=function()
+	{
+		var pic=document.getElementById("pic");
+		var picture=pic.getElementsByTagName("ul")[0];
+		var aLi=picture.getElementsByTagName("li");
+		var squares=pic.getElementsByTagName("ul")[1];
+		var aLis=squares.getElementsByTagName("li");
+		
+		for(var i=0;i<aLi.length;i++)
+		{
+			aLi.index=i;
+		}	
+		for(var j=0;j<aLis.length;j++)
+		{
+			aLis[j].onmouseover=function(num){
+				return function(){
+					startMove(picture,{top:-420*(num)});
+				}
+			}(j);
+		}
+		
+		var timer=setInterval(next,4000);
+
+		function next()
+		{
+			aLi.index++;
+			if(aLi.index==aLi.length)
+			{
+				aLi.index=0;
+				startMove(picture,{top:0});
+			}
+			startMove(picture,{top:-420*aLi.index});
+		}
+			
+		pic.onmouseover=function()
+		{
+			clearInterval(timer);
+		};
+		pic.onmouseout=function()
+		{
+			timer=setInterval(next,4000);
+		};
+	
+	};
+</script>
+<body>
+
+
+<a href="#back" style="position:fixed; right:20px; bottom:20px; z-index:1000;"><img src="imgs/back.png" width="50" height="70" /></a>
+<div id="back"></div>
+
+
+<div id="top">
+	<img src="imgs/logo.png" width="183" height="55" />
+	<span>登录&nbsp;|&nbsp;注册&nbsp;|&nbsp;成为房东&nbsp;|&nbsp;联系我们</span>
+</div>
+<br /><br />
+
+
+<!--图片轮播-->
+<div id="pic">
+	<ul id="picture">
+		<a title="" target="_blank" href="#">
+			<li><img src="imgs/zhibu_1.jpg"></li>
+		</a>
+		<a title="" target="_blank" href="#">
+			<li><img src="imgs/zhibu_2.jpg"></li>
+		</a>
+		<a title="" target="_blank" href="#">
+			<li><img src="imgs/zhibu_3.jpg"></li>
+		</a>
+  		<a title="" target="_blank" href="#">
+			<li><img src="imgs/zhibu_4.jpg"></li>
+		</a>
+	</ul>
+	<ul id="squares">
+		<a target="_blank" href="#">
+			<li></li>
+		</a>
+		<a target="_blank" href="#">
+			<li></li>
+		</a>
+		<a target="_blank" href="#">
+			<li></li>
+		</a>
+		<a target="_blank" href="#">
+			<li></li>
+		</a>
+	</ul>
+
+    <!--搜索框-->
+    <div id="search" style="width:800px; height:80px; position:absolute; left:20%; bottom:100px;
+font-family:'微软雅黑','宋体','Arial Narrow';">
+        
+        <select name="province" id="s1" style="width:170px; height:40px; float:left; margin-top:20px; color:#666; border:1px solid #ccc; text-align:center;"><option></option></select>   
+        <select name="city" id="s2" style="width:170px; height:40px; float:left; margin-top:20px; color:#666; border:1px solid #ccc; text-align:center;">   <option></option></select>   
+        <script language="javascript">   setup();	</script> 
+         <script>
+			$(function () {
+			$("#txtBeginDate").calendar({
+				controlId: "divDate",                                 // 弹出的日期控件ID，默认: $(this).attr("id") + "Calendar"
+				speed: 200,                                           // 三种预定速度之一的字符串("slow", "normal", or "fast")或表示动画时长的毫秒数值(如：1000),默认：200
+				complement: true,                                     // 是否显示日期或年空白处的前后月的补充,默认：true
+				readonly: true,                                       // 目标对象是否设为只读，默认：true
+				upperLimit: NaN,                               // 日期上限，默认：NaN(不限制)
+				lowerLimit: new Date(),                   // 日期下限，默认：NaN(不限制)
+				callback: function () {                               // 点击选择日期后的回调函数
+				}
+			});
+			$("#txtEndDate").calendar();
+			});
+		</script>
+        <input id="txtBeginDate" style="width:170px; height:38px; float:left; margin-top:20px; border:1px solid #ccc; text-align:center;" placeholder="入住时间"/>
+        <input id="txtEndDate" style="width:170px; height:38px; float:left; margin-top:20px; border:1px solid #ccc; text-align:center;" placeholder="退房时间" />
+        
+        <input id="search_house" type="button" value="搜索房源" style="width:100px; height:40px; float:left; border:1px solid #0b579f; text-align:center; background-color:#0b579f; color:#FFF; font-weight:bold; font-family:'宋体'; font-size:20px; margin-top:20px;" />
+    </div>
+</div> 
+
+
+<!--明码标价-->
+<div id="title1">
+	<span>明码标价</span>
+</div>
+<div style="clear:both;"></div>
+<div id="house1">
+    <ul>
+        <li>
+        	<div class="houseimg1">
+            	<img src="imgs/house1_1.png" width="100%" height="250" />
+            </div>
+        	<div class="houseword">
+            	<span class="span1"><span style="font-size:24px;">丽江</span>&nbsp;纳西族建筑风格——三房一壁,二层楼阁,整体氛围古香古色｡</span>
+                <span class="span2">整套房子</span><span class="span3">￥188/晚</span>
+            </div>
+        </li>
+        <li>
+        	<div class="houseimg1">
+            	<img src="imgs/house1_2.png" width="100%" height="250" />
+            </div>
+        	<div class="houseword">
+            	<span class="span1"><span style="font-size:24px;">上海</span>&nbsp;一个老房子改造而来的建筑师工作室,满满的书,香香的咖啡。</span>
+                <span class="span2">独立房间</span><span class="span3">￥211/晚</span>
+            </div>
+        </li>
+        <li>
+        	<div class="houseimg1">
+            	<img src="imgs/house1_3.png" width="100%" height="250" />
+            </div>
+        	<div class="houseword">
+            	<span class="span1"><span style="font-size:24px;">香港</span>&nbsp;舒适便捷，适宜举办活动，欢迎家庭/儿童入住。</span>
+                <span class="span2">独立房间</span><span class="span3">￥569/晚</span>
+            </div>
+        </li>
+        <li>
+        	<div class="houseimg1">
+            	<img src="imgs/house1_4.png" width="100%" height="250" />
+            </div>
+        	<div class="houseword">
+            	<span class="span1"><span style="font-size:24px;">香港</span>&nbsp;这家服务公寓位于中环苏豪区，交通便利。</span>
+                <span class="span2">整套房子</span><span class="span3">￥532/晚</span>
+            </div>
+        </li>
+    </ul>
+     <ul style="margin-bottom:20px;">
+        <li>
+        	<div class="houseimg1">
+            	<img src="imgs/house1_5.png" width="100%" height="250" />
+            </div>
+        	<div class="houseword">
+            	<span class="span1"><span style="font-size:24px;">杭州</span>&nbsp;暖心公寓。爱散步，哪儿都能到｡爱毅行，景区随心走。</span>
+                <span class="span2">整套房子</span><span class="span3">￥303/晚</span>
+            </div>
+        </li>
+        <li>
+        	<div class="houseimg1">
+            	<img src="imgs/house1_6.png" width="100%" height="250" />
+            </div>
+        	<div class="houseword">
+            	<span class="span1"><span style="font-size:24px;">台湾</span>&nbsp;房间的设计符合现代理念，白色内饰，最多可容纳多达3人。</span>
+                <span class="span2">整套房子</span><span class="span3">￥444/晚</span>
+            </div>
+        </li>
+        <li>
+        	<div class="houseimg1">
+            	<img src="imgs/house1_7.png" width="100%" height="250" />
+            </div>
+        	<div class="houseword">
+            	<span class="span1"><span style="font-size:24px;">台湾</span>&nbsp;台北艺术家的秘密基地，分享故事，分享生活。</span>
+                <span class="span2">独立房间</span><span class="span3">￥117/晚</span>
+            </div>
+        </li>
+        <li>
+        	<div class="houseimg1">
+            	<img src="imgs/house1_8.png" width="100%" height="250" />
+            </div>
+        	<div class="houseword">
+            	<span class="span1"><span style="font-size:24px;">北京</span>&nbsp;美式Loft阁楼现代风格，简约而不简单。</span>
+                <span class="span2">整套房子</span><span class="span3">￥345/晚</span>
+            </div>
+        </li>
+    </ul>
+    <span style="display:block; width:100%; height:40px; line-height:40px; text-align:right; font-size:20px; font-family:'华文行楷'; color:#0b579f; padding-right:40px;">查看更多>>&nbsp;&nbsp;</span>
+</div>
+
+
+<!--以物易房-->
+<div id="title2" style="margin-top:0;">
+	<span>以物易房</span>
+</div>
+<div style="clear:both;"></div>
+<div id="house2">
+     <ul>
+        <li>
+        	<div class="houseimg2">
+            	<div style="width:100%; height:120px; margin-bottom:4px;">
+                	<img src="imgs/house2_1a.png" width="100%" height="120" />
+                </div>
+                <div style="width:49%; float:left; margin-right:2%; height:125px;">
+                	<img src="imgs/house2_1b.png" width="100%" height="125" />
+                </div>
+                <div style="width:49%; float:right; height:125px;">
+                	<img src="imgs/house2_1c.png" width="100%" height="125" />
+                </div>
+                <div class="zhezhao">
+                	<p>需一室内摆件，不论价格。</p>
+                    <a href="#" class="btn">立即交换</a>
+                </div>
+            </div>
+        	<div class="houseword">
+            	<span class="span1"><span style="font-size:24px;">重庆</span>&nbsp;在一天的旅途后回到家,可与三两知己窝在沙发上看看电影。</span>
+            </div>
+        </li>
+        <li>
+        	<div class="houseimg2">
+            	<img src="imgs/house2_2.png" width="100%" height="250" />
+                <div class="zhezhao">
+                	<p>十张不同地方的人物照。</p>
+                    <a href="#" class="btn">立即交换</a>
+                </div>
+            </div>
+        	<div class="houseword">
+            	<span class="span1"><span style="font-size:24px;">西安</span>&nbsp;我们的家位于大明宫遗址界碑处，与之隔路相望。</span>
+            </div>
+        </li>
+        <li>
+        	<div class="houseimg2">
+            	<div style="width:49%; float:left; margin-right:2%; height:122px; margin-bottom:3px;">
+                	<img src="imgs/house2_3a.png" width="100%" height="122" />
+                </div>
+                <div style="width:49%; float:right; height:122px; margin-bottom:3px;">
+                	<img src="imgs/house2_3b.png" width="100%" height="122" />
+                </div>
+                <div style="width:49%; float:left; margin-right:2%; height:123px; margin-top:2px;">
+                	<img src="imgs/house2_3c.png" width="100%" height="123" />
+                </div>
+                <div style="width:49%; float:right; height:123px; margin-top:2px;">
+                	<img src="imgs/house2_3d.png" width="100%" height="123" />
+                </div>
+                <div class="zhezhao">
+                	<p>一顿丰盛的晚餐，最好是川菜。</p>
+                    <a href="#" class="btn">立即交换</a>
+                </div>
+            </div>
+        	<div class="houseword">
+            	<span class="span1"><span style="font-size:24px;">北京</span>&nbsp;胡同民宿，地处城市中央,北侧雍和宫,西侧南锣鼓巷。</span>
+            </div>
+        </li>
+        <li>
+        	<div class="houseimg2">
+            	<div style="width:49%; float:left; margin-right:2%; height:250px;">
+                	<img src="imgs/house2_4a.png" width="100%" height="250" />
+                </div>
+                <div style="width:49%; float:right; height:120px; margin-bottom:5px;">
+                	<img src="imgs/house2_4b.png" width="100%" height="120" />
+                </div>
+                <div style="width:49%; float:right; height:125px;">
+                	<img src="imgs/house2_4c.png" width="100%" height="125" />
+                </div>
+                <div class="zhezhao">
+                	<p>一幅手工刺绣，附带签名。</p>
+                    <a href="#" class="btn">立即交换</a>
+                </div>
+            </div>
+        	<div class="houseword">
+            	<span class="span1"><span style="font-size:24px;">大理</span>&nbsp;“六合同春”结构的老宅院，位于喜洲的城北村。</span>
+            </div>
+        </li>
+    </ul>
+    <span style="display:block; width:100%; height:40px; line-height:40px; text-align:right; font-size:20px; font-family:'华文行楷'; color:#0b579f; padding-right:40px;">查看更多>>&nbsp;&nbsp;</span>
+</div>
+<div style="clear:both;"></div>
+
+
+<!--听我说故事-->
+<div id="story">
+    <div>
+    	<img src="imgs/storytitle.png" width="400" height="80" />
+    </div>
+    <div class="story_left">
+    	<div class="story_left_top">
+                <div class="story_left_pic">
+                    <img src="imgs/zhibu_story_left_pic1.jpg" width="100%" height="100%" />
+                </div>
+                <a href="article.html" target="_blank">
+                    <div class="story_left_word">
+                        <span class="span1">【烟雨西湖瘦 缥缈扬州梦】</span><span class="span2">作者：大漠胡杨</span><br /><br />
+                        <p>&nbsp;&nbsp;都说“烟花三月下扬州”，扬州最美在瘦西湖。最美的瘦西湖是3.4.5月，而我现在才来，似乎错过了时节。来之前没做足功课，只知道西湖更胜，瘦西湖字面理解是比西湖小，所以叫瘦西湖吧？没见过西湖，也就不好拿来比较，西湖也好，瘦西湖也罢，如同环肥燕瘦，个人喜好，仅此而已，所以从未想象过她的样子！</p>
+                        <p>&nbsp;&nbsp;没有问过度娘关于瘦西湖的前世今生，只是不想通过别人的评论而禁锢了自己对她的定位。</p>
+                    </div>
+                </a>
+        </div>
+        <div class="story_left_bottom">
+        		<div class="story_left_pic">
+                    <img src="imgs/zhibu_story_left_pic2.jpg" width="100%" height="100%" />
+                </div>
+                <div class="story_left_word">
+                    <span class="span1">【九寨沟，梦遗落的地方】</span><span class="span2">作者：余温</span><br /><br />
+                    <p>&nbsp;&nbsp;有时候，蓝，是一种距离的颜色。</p>
+                    <p>&nbsp;&nbsp;九寨沟的水，是梦中澄澈的蓝。</p>
+                    <p>&nbsp;&nbsp;想必，上天在缔造她的时候，诡谲地在质地中掺入了一份疏离的汁液，与秀山秀水反应后，才生成了朦胧的蓝。所以，即使是虚浮的人来九寨沟君临天下般看山水，也会顿生肃穆之情。在她面前，所有对红灯绿酒的眷恋都会变得异常脆弱，一丝小小的涟漪，就会使其碎得无影无踪。</p>
+                </div>
+        </div>
+    </div>
+    <div class="story_right">
+    	<div>
+        	<p>万<br />里<br />长<br />城</p>
+            <img src="imgs/zhibu_story_right1.jpg" width="320" height="110" />
+        </div>
+    	<div>
+        	<p>泸<br />沽<br />湖</p>
+            <img src="imgs/zhibu_story_right2.jpg" width="320" height="110" />
+        </div>
+        <div>
+        	<p>&nbsp;<br />华<br />山</p>
+            <img src="imgs/zhibu_story_right3.jpg" width="320" height="110" />
+        </div>
+    </div>
+</div>
+
+
+<!--关于我们-->
+<div id="about">
+	<ul>
+    	<li>
+        	<span>止步网</span>
+            <p>关于我们</p>
+            <p>加入我们</p>
+            <p>联系我们</p>
+            <p>网站声明</p>
+        </li>
+        <li>
+        	<span>发现</span>
+            <p>旅游保险</p>
+            <p>旅游基金</p>
+            <p>出行手册</p>
+            <p>&nbsp;</p>
+        </li>
+        <li>
+        	<span>帮助中心</span>
+            <p>帮助说明</p>
+            <p>网站地图</p>
+            <p>新手上路</p>
+            <p>旅行贴士</p>
+        </li>
+    </ul>
+</div>
+
+
+<div id="bottom">
+	<br /><br />
+	友情链接：<a href="http://www.cnsfk.com/" target="_blank">沙发客网</a>&nbsp;|&nbsp;<a href="http://ljianren.com/" target="_blank">脚步网</a>&nbsp;|&nbsp;<a href="http://www.sfkkkkkkkkk.com/" target="_blank">9K沙发客</a>&nbsp;|&nbsp;<a href="https://www.couchsurfing.com/" target="_blank">couchsurfing</a>&nbsp;|&nbsp;<a href="https://zh.airbnb.com/?af=15514385&c=baidu_generic_src_demand_Couch_p1&src=Baidu&medium=PPC&ag_kwid=2299-1-d76949114ea8bcf2.f4e18b323971e388" target="_blank">Airbnb</a>&nbsp;|&nbsp;<a href="http://www.tuniu.com/?p=14183&cmpid=mkt_03029701&utm_campaign=daohang&utm_source=2345.com&utm_medium=display" target="_blank">途牛旅游</a>&nbsp;|&nbsp;<a href="http://www.lvye.cn/" target="_blank">绿野户外</a>&nbsp;|&nbsp;<a href="http://www.qyer.com/" target="_blank">穷游网</a>&nbsp;|&nbsp;<a href="http://www.12306.cn/mormhweb/" target="_blank">12306</a>
+    <br /><br />
+    版权归属：&copy;广西大学计算机与电子信息学院电子商务系2013级（1）班&nbsp;沈东风
+</div>
+
+
+</body>
+</html>

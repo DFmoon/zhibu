@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>房源信息</title>
+<link rel="shortcut icon" href="imgs/shorticon.png" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet" type="text/css" href="css/house.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/jscript" src="js/jquery-1.5.1.js"></script>
+<script type="text/jscript" src="js/zhibu.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<script>
+	$(document).ready(function(e) {			
+		t = $('#list .div_1').offset().top;
+		fh = $('#list .div_1').height();
+		$(window).scroll(function(e){
+			s = $(document).scrollTop();	
+			if(s > t - 60){
+				$('#list .div_1').css('position','fixed');			
+			}else{
+				$('#list .div_1').css('position','');
+			}
+		})
+	});
+</script>
+</head>
+<body>
+
+<a href="#back" style="position:fixed; right:20px; bottom:20px; z-index:1000;"><img src="imgs/back.png" width="50" height="70" /></a>
+<div id="back"></div>
+
+
+<div id="top">
+	<img src="imgs/logo.png" width="183" height="55" />
+	<span>登录&nbsp;|&nbsp;注册&nbsp;|&nbsp;成为房东&nbsp;|&nbsp;联系我们</span>
+</div>
+<br /><br />
+
+
+<div id="pic">
+	<img src="imgs/house_1.png" width="100%" height="350" />
+</div>
+
+
+<div id="list">
+	<div class="div_1">
+    	<div class="top">188元/晚</div>
+        <div>
+			<script>
+				$(function () {
+					$("#txtBeginDate").calendar({
+						controlId: "divDate",                                 // 弹出的日期控件ID，默认: $(this).attr("id") + "Calendar"
+						speed: 200,                                           // 三种预定速度之一的字符串("slow", "normal", or "fast")或表示动画时长的毫秒数值(如：1000),默认：200
+						complement: true,                                     // 是否显示日期或年空白处的前后月的补充,默认：true
+						readonly: true,                                       // 目标对象是否设为只读，默认：true
+						upperLimit: NaN,                               // 日期上限，默认：NaN(不限制)
+						lowerLimit: new Date(),                   // 日期下限，默认：NaN(不限制)
+						callback: function () {                               // 点击选择日期后的回调函数
+						}
+					});
+					$("#txtEndDate").calendar();
+				});
+    		</script>
+            <input id="txtBeginDate" style=" margin-bottom:20px;width:190px; height:36px; border:1px solid #ccc; text-align:center;" placeholder="入住时间"/>
+    		<input id="txtEndDate" style="width:190px; height:36px; border:1px solid #ccc; text-align:center;" placeholder="退房时间" />
+		</div>
+        <div style="margin-top:20px;">
+        	<a href="#" class="btn">立即订购</a>&nbsp;&nbsp;
+    		<a href="#" class="btn">加入收藏</a>
+        </div>
+    </div>
+</div>
+
+
+<div id="content">
+	<div class="house_name">
+    	<span>丽江古城梦忆客栈</span>
+    </div>
+    
+	<div class="title">
+    	<span>房主</span>
+    </div>
+    <div class="house_holder">
+    	<div class="pic">
+    		<img src="imgs/zhibu_story_left_pic1.jpg" width="100%" height="100%" />
+        </div>
+        <div class="word">
+        	<p>大漠胡杨&nbsp;&nbsp;♀</p>
+            <p>联系电话：15777110896</p>
+            <p>邮箱地址：1375709981@qq.com</p>
+        </div>
+    </div>
+    
+    <div class="title">
+    	<span>房屋介绍</span>
+    </div>
+    <div class="house_info">
+    	<p>
+        	客栈是丽江典型的纳西风格小院,由三房一照壁组成,让您在入住的同时能感受到丽江纳西族的独特文化!</p>
+            <p>房间有两个床位,可住两人,提供吹风机,免费的洗漱用品,无线wifi,独立卫生间,空调,电脑｡</p>
+            <p>房主将提供丽江周边景点游玩的介绍,当地好吃的好玩的统统都可以介绍。</p>
+            <p>客栈的地理位置接近木府,交通便利,周围环境优美,是很适合旅游休闲的好地方。
+        </p>
+    </div>
+    
+    <div class="title">
+    	<span>具体位置</span>
+    </div>
+    <div class="house_address">
+    	<p>地址：大研古镇忠义市场旁边,和府洲际假日酒店后门</p>
+        <div style="width:697px;height:400px;border:#ccc solid 1px;" id="dituContent"></div>
+		<script type="text/javascript">   
+			var markerArr = [{title:"丽江古城梦忆客栈",content:"我的备注",point:"100.24441|26.871312",isOpen:1,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}];         
+            initMap();//创建和初始化地图
+        </script>
+    </div>
+    
+    <div class="title">
+    	<span>评价</span>
+    </div>
+    <div class="communication">
+        <div class="commu">
+            <div class="commu_top">
+                <div class="commu_top_pic">
+                    <img src="imgs/article_commu1.jpg" width="100%" height="100%" />
+                </div>
+                <div class="commu_top_name">
+                    <span class="span3">天空下的蒲公英</span>
+                    <span class="span4">2016/11/24 21:06</span>
+                </div>
+            </div>
+            <div class="commu_middle">
+                <p>
+                    “瘦西湖”之名最早见于文献记载为清初吴绮《扬州鼓吹词序》：“城北一水通平山堂，名瘦西湖，本名保障湖。
+                </p>
+            </div>
+            <div class="commu_bottom">
+                <img src="imgs/article_zan.gif" width="24" height="24" />&nbsp;
+                <img src="imgs/article_cai.gif" width="24" height="24" />
+            </div>
+        </div>
+        <div class="commu">
+            <div class="commu_top">
+                <div class="commu_top_pic">
+                    <img src="imgs/article_commu1.jpg" width="100%" height="100%" />
+                </div>
+                <div class="commu_top_name">
+                    <span class="span3">天空下的蒲公英</span>
+                    <span class="span4">2016/11/24 21:06</span>
+                </div>
+            </div>
+            <div class="commu_middle">
+                <p>
+                    “瘦西湖”之名最早见于文献记载为清初吴绮《扬州鼓吹词序》：“城北一水通平山堂，名瘦西湖，本名保障湖。
+                </p>
+            </div>
+            <div class="commu_bottom">
+                <img src="imgs/article_zan.gif" width="24" height="24" />&nbsp;
+                <img src="imgs/article_cai.gif" width="24" height="24" />
+            </div>
+        </div>
+        <div class="commu">
+            <div class="commu_top">
+                <div class="commu_top_pic">
+                    <img src="imgs/article_commu1.jpg" width="100%" height="100%" />
+                </div>
+                <div class="commu_top_name">
+                    <span class="span3">天空下的蒲公英</span>
+                    <span class="span4">2016/11/24 21:06</span>
+                </div>
+            </div>
+            <div class="commu_middle">
+                <p>
+                    “瘦西湖”之名最早见于文献记载为清初吴绮《扬州鼓吹词序》：“城北一水通平山堂，名瘦西湖，本名保障湖。
+                </p>
+            </div>
+            <div class="commu_bottom">
+                <img src="imgs/article_zan.gif" width="24" height="24" />&nbsp;
+                <img src="imgs/article_cai.gif" width="24" height="24" />
+            </div>
+        </div>
+    </div>
+    <a href="#" class="btn">上一页</a>
+    <a href="#" class="btn">下一页</a><br /><br /><br /><br />
+       
+</div>
+
+<div  style="clear:both;"></div>
+<div id="bottom">
+	<br /><br />
+	友情链接：<a href="http://www.cnsfk.com/" target="_blank">沙发客网</a>&nbsp;|&nbsp;<a href="http://ljianren.com/" target="_blank">脚步网</a>&nbsp;|&nbsp;<a href="http://www.sfkkkkkkkkk.com/" target="_blank">9K沙发客</a>&nbsp;|&nbsp;<a href="https://www.couchsurfing.com/" target="_blank">couchsurfing</a>&nbsp;|&nbsp;<a href="https://zh.airbnb.com/?af=15514385&c=baidu_generic_src_demand_Couch_p1&src=Baidu&medium=PPC&ag_kwid=2299-1-d76949114ea8bcf2.f4e18b323971e388" target="_blank">Airbnb</a>&nbsp;|&nbsp;<a href="http://www.tuniu.com/?p=14183&cmpid=mkt_03029701&utm_campaign=daohang&utm_source=2345.com&utm_medium=display" target="_blank">途牛旅游</a>&nbsp;|&nbsp;<a href="http://www.lvye.cn/" target="_blank">绿野户外</a>&nbsp;|&nbsp;<a href="http://www.qyer.com/" target="_blank">穷游网</a>&nbsp;|&nbsp;<a href="http://www.12306.cn/mormhweb/" target="_blank">12306</a>
+    <br /><br />
+    版权归属：&copy;广西大学计算机与电子信息学院电子商务系2013级（1）班&nbsp;沈东风
+</div>
+
+
+</body>
+</html>

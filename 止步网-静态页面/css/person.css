@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+#pic{ width:100%; height:350px; }
+#pic .icon{ width:160px; height:160px; border-radius:80px; position:absolute; top:20%; left:44%; overflow:hidden; background-color:#906;}
+#pic .name{ width:200px; height:40px; position:absolute; top:50%; left:43%; line-height:40px;}
+#pic .name span{ font-family:"宋体"; color:#FFF; font-weight:bold; font-size:18px;}
+
+
+#list{ margin-left:7%; margin-right:2%; width:15%; height:600px; float:left;}
+#list ul{ width:100%; margin-top:20px; border-right:8px #0b579f solid; }
+#list ul li{width:100%; display:block; height:50px; line-height:50px; font-family:"宋体"; color:#666; font-size:20px;}
+#list ul li:hover{ color:#0b579f; cursor:pointer;}
+
+
+#content{ width:65%; margin-right:8%; min-height:900px; float:right; }
+#content iframe{ margin-top:20px; width:100%; min-height:800px;  border:none;}
+.btn{display: inline-block; padding: 5px 10px; font-size: 14px; color: #FFF; border: 2px solid #4d92d9; background-color: #4d92d9; text-decoration: none; transition: 0.4s;}
+.btn:hover{background-color: transparent; color: #4d92d9; transition: 0.4s;}
